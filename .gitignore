@@ -1,0 +1,17 @@
+
+.gitignore
+.idea/encodings.xml
+.idea/misc.xml
+.idea/workspace.xml
+ncrpheno.iml
+
+src/main/resources/
+src/main/test/
+
+src/main/webapp/lib/
+src/main/webapp/static/images
+src/main/webapp/static/ncRPheDB_Data
+src/main/webapp/static/suppl
+src/main/webapp/WEB-INF/views
+
+target/

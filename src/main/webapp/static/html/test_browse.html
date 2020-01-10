@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ncRPheno disease browse</title>
+
+
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap-theme.min.css"/>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script src="/lib/jqTree/jquery.min.js"></script>
+    <script src="/lib/jqTree/tree.jquery.js"></script>
+    <link rel="stylesheet" href="/lib/jqTree/jqtree.css" type="text/css"/>
+    <style>
+        #scroll-container {
+            height: 500px;
+            width:  600px;
+            overflow-y: scroll;
+            user-select: none;
+        }
+    </style>
+    <link href="/static/css/browse_style.css" rel="stylesheet" type="text/css" />
+
+    <!--<link href="innerstyle.css" rel="stylesheet" type="text/css" />-->
+    <!--</head>-->
+<body>
+<!--topMain start -->
+<div id="topMain">
+
+    <!--top start -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div id="top">
+
+            <a href="/ncrpheno.html"><img src="/static/images/ncrpheno_logo.png" alt="charged" width="237" height="100" border="0" class="logo" /></a>
+            <p class="title">: A database for ncRNA-disease association prioritization</p>
+
+            <!--top end -->
+        </div>
+
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="/ncrpheno.html">Home</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Search<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ncRNA_Search.jsp">ncRNA Search</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Disease_Search.jsp">Disease Search</a></li>
+                            <li role="separator" class="divider"></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Tools<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ncRNAlyzer.jsp">ncRNAlyzer</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Networklyzer.jsp">ncRNANetlyzer</a></li>
+                            <li role="separator" class="divider"></li>
+
+                        </ul>
+                    </li>
+
+
+                    <li><a href="/WebService.jsp">Web Service</a></li>
+                    <li><a href="/Download.jsp">Download</a></li>
+                    <li><a href="/Submit.jsp">Submission</a></li>
+                    <li><a href="/help.jsp">Help</a></li>
+                    <!--<li><a href="About.jsp">About</a></li>-->
+                    <!--<li><a href="contact.jsp">Contact us</a></li>-->
+
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+    </nav>
+    <!--navMain end -->
+    <!--blackMain start -->
+
+    <!--blackMain end -->
+    <!--grey start -->
+    <!--grey end -->
+    <!--botMain start -->
+    <div id="botMain">
+        <!--bot start -->
+        <div id="bot">
+            <!--left panel start -->
+            <!--left panel end -->
+            <!--mid panel start -->
+            <!--mid panel end -->
+            <!--right panel start -->
+            <div id="right">
+                <br>
+                <h2>
+                    <span class="main">
+                    <font color="#D27004">Please click a disease to browser disease-ncRNA association:</font>
+                    </span>
+                </h2>
+
+
+                <div id="scroll-container">
+                    <div id="tree1"></div>
+                </div>
+                <div id="side-play">
+                    <iframe width="100%" height="100%" name="mainFrame">
+
+                    </iframe>
+                </div>
+                <script>
+                    var res ='[]'
+                    //console.log(res)
+                    var data = eval('(' + res + ')');
+
+                    console.log(data)
+                    let attributes = {
+                        ParentDisease: 'parent',
+                        name: 'child',
+                        rootDisease: 'Browse'
+                    };
+                    function toTreeData (data, attributes) {
+                        let resData = data;
+                        let tree = [];
+
+                        for (let i = 0; i < resData.length; i++) {
+                            if (resData[i][attributes.ParentDisease] === attributes.rootDisease) {
+                                let obj = {
+                                    name: resData[i][attributes.name],
+                                    children: []
+                                };
+                                tree.push(obj);
+                                resData.splice(i,1);
+                                i--;
+                            }
+                        }
+                        run(tree);
+                        function run(chiArr) {
+                            if (resData.length !== 0) {
+                                for (let i = 0; i < chiArr.length; i++) {
+                                    for (let j = 0; j < resData.length; j++) {
+                                        if (chiArr[i].name === resData[j][attributes.ParentDisease]) {
+                                            let obj = {
+                                                name: resData[j][attributes.name],
+                                                children: []
+                                            };
+                                            chiArr[i].children.push(obj);
+                                            resData.splice(j, 1);
+                                            j--;
+                                        }
+                                    }
+                                    run(chiArr[i].children);
+                                }
+                            }
+                        }
+                        return tree;
+                    }
+                    let treeData = toTreeData(data, attributes);
+                    console.log(treeData)
+                    var TreeData = '[{name:"Browse",children:' + JSON.stringify(treeData) + '}]';
+                    console.log(TreeData)
+                    ResTreeData = eval('(' + TreeData + ')');
+                    console.log(ResTreeData);
+
+
+                    $(function() {
+                        $('#tree1').tree({
+                            data: ResTreeData,
+                            saveState: false,
+                            autoEscape: false,
+                            buttonLeft: true,
+                            autoOpen: 0
+                        });
+                    });
+
+                </script>
+            </div>
+            <!--right panel end -->
+        </div>
+        <!--bot end -->
+        <br class="spacer" />
+    </div>
+    <!--botMain end -->
+    <!--footer start -->
+    <div id="footerMain">
+        <!--footer start -->
+        <div id="footer">
+            <p class="department">Bioinformatics Laboratory for Precision Medicine</p>
+            <p class="copyright">Copyright @ SUN YAT-SEN UNIVERSITY 2018</p>
+        </div>
+        <!--footer end -->
+    </div>
+    <!--footer end -->
+</div>
+</body>
+</html>

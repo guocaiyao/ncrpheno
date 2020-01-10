@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html charset=UTF-8"  />
+    <meta name="keywords" content="ncRPheno, platform, database, noncoding RNA, ncRNA, miRNA, lncRNA, circRNA, disease, phenotype"/>
+    <title>ncRPheno news</title>
+    <script src="/lib/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/lib/bootstrap/bootstrap-theme.min.css"/>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="/static/css/innerstyle_home.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/lib/jquery.js"></script>
+    <script type="text/javascript" src="/lib/jsapi.js"></script>
+    <script type="text/javascript" src="/lib/corechart.js"></script>
+    <script type="text/javascript" src="/lib/jquery.gvChart-1.0.1.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.ba-resize.min.js"></script>
+    <!--<%&#45;&#45;back to the top&#45;&#45;%>-->
+    <style type="text/css">
+
+        .top_e{
+            position:fixed;right:10px;bottom:40px;
+            background:rgba(204,200,255,0.6);
+            border-radius:15px;
+            cursor:pointer;
+            display:none;
+            width:60px;
+            height:60px;
+        }
+        .top_e:hover
+        {
+            color:white;
+            background:#1296DB;
+        }
+    </style>
+
+
+</head>
+
+<body>
+<!--topMain start -->
+<div><!--<div id="topMain">-->
+    <!--top start -->
+
+    <!--topMain end -->
+    <!--navMain start -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div>
+            <div id="top" >
+
+                <a href="/ncrpheno.html"><img src="/static/images/ncrpheno_logo.png" alt="charged" width="1200" height="85" border="0" class="logo" /></a>
+
+                <!--top end -->
+            </div>
+
+        </div>
+
+
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav nav-pills nav-justified">
+                    <li><a href="/ncrpheno.html">Home</a></li>
+                    <li><a href="browse.html">Browse</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Search<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ncRNA_Search.jsp">ncRNA Search</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Disease_Search.jsp">Disease Search</a></li>
+                            <li role="separator" class="divider"></li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Utility<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/ncRNAlyzer.jsp">ncRNA prioritization</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/Networklyzer.jsp">Network visualization</a></li>
+                            <li role="separator" class="divider"></li>
+                        </ul>
+                    </li>
+                    <li><a href="/WebService.jsp">Web Service</a></li>
+                    <li><a href="/Download.jsp">Download</a></li>
+                    <li><a href="/Submit.jsp">Submit</a></li>
+                    <li><a href="/help.jsp">Help</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+
+    </nav>
+    <!--navMain end -->
+    <!--blackMain start -->
+
+    <!--blackMain end -->
+    <!--grey start -->
+    <!--grey end -->
+    <!--botMain start -->
+    <div id="botMain">
+        <!--bot start -->
+        <div id="bot">
+            <!--left panel start -->
+            <div id="left">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title" style="color:#D27004">Statistics</h2>
+                    </div>
+                    <div class="panel-body">
+
+                        <li style="color:#D27004" ><b>Associations: </b>482751 </li>
+                        <li style="color:#D27004"><b>ncRNAs: </b>14494</li>
+                        <li style="color:#D27004"><b>Disease phenotypes: </b>3210</li>
+                        <li style="color:#D27004"><b>Literatures: </b>25642</li>
+
+                    </div>
+                </div>
+
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title" style="color:#D27004">News</h2>
+                    </div>
+                    <div class="panel-body">
+                        <li style="color:#D27004"><a target="_blank" href="News.html"><b>Sep 20, 2019: </b>The ncRPheno version 2.0 was released...</a></li>
+                        <li style="color:#D27004"><a target="_blank" href="News.html"><b>December 27-29, 2018: </b>Oral presentation in the ICCCB 2018 Symposium... </a></li>
+                        <li style="color:#D27004"><a target="_blank" href="News.html"><b>October 23, 2018: </b>Oral presentation in the CCSBS Symposium... </a></li>
+                        <li style="color:#D27004"><a target="_blank" href="News.html"><b>Jun 25, 2018: </b>The ncRPheno version 1.0 was released...</a></li>
+                        <li style="color:#D27004"><a target="_blank" href="News.html"><b>Apr 10, 2018: </b>Poster presentation in Biocuration 2018...</a></li>
+                        <!--<li style="color:#D27004"><a target="_blank" href="News.html"><b>Jun 1, 2018:</b> Startup of the ncRNAVar project....</a></li>-->
+
+                    </div>
+                </div>
+
+
+
+                <div class="panel-body" style="float:left;">
+                    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/1.js?i=0m5ifwkse3c&amp;s=180&amp;m=7&amp;v=false&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+                </div>
+
+
+            </div>
+
+
+            <div id="right">
+                <!--<h2><span class="main">Last News</span></h2>-->
+                <!--<p class="round"><span>4 July,2018: The data in ncRPheDB was updated with 2,839 ncRNA-disease associations between 91 ncRNAs and 501 diseases/phenotypes. The total ncRNA-disease association number is increased to 143,680.</span></p>-->
+
+                <h2 class="panel-title" style="color:#D27004">News</h2>
+                <div style=" border:3px solid;color:#D27004" ></div>
+                </br>
+
+                <div class="panel-body">
+                    <li style="color:#D27004"><b>Sep 20, 2019, The ncRPheno version 2.0 was released.</b></li>
+                    <p align="justify" class="rightTxt" style="width: 930px" >
+                        The ncRPheno platform version 2.0 contains 482,751 non-redundant associations between 14494 ncRNAs and 3210 disease phenotypes across 11 species from 25642 publications. The numbers of associations included in the ncRPheno version 2.0 are approximately 4.64-fold of those in the ncRPheno version 1.0. Moreover, compared with the version 1.0, the version 2.0 offers extra applications for further analysis and visualization on the association data, including ncRNA prioritization, network visualization, disease-tree visualization and word-cloud visualization.
+                    <br><li style="color:#D27004"><b>December 27, 2018, Oral presentation in the ICCCB 2018 Symposium</b></li>
+                    <p align="justify" class="rightTxt" style="width: 930px">
+                        The ncRPheno platform was presented in the 2018 2nd International Conference on Computational Chemistry and Biology (ICCCB 2018) in the keynote speaker session, Hong Kong, China.
+                    </p>
+
+
+                    <br><li style="color:#D27004"><b>October 23, 2018, Oral presentation in the CCSBS Symposium.</b></li>
+                    <p align="justify" class="rightTxt" style="width: 930px">
+                        The ncRPheno platform was presented in the 8th National Conference on Bioinformatics and Systems Biology of China and the 1st (Macao) International Bioinformatics Symposium in the oral presentation session, Macao, China.
+                    </p>
+                    <br><li style="color:#D27004"><b>Jun 25, 2018, The ncRPheno version 1.0 was released.</b></li>
+                    <p align="justify" class="rightTxt" style="width: 930px">
+                        The ncRPheno platform version 1.0 contains 103,932 non-redundant associations between 12,447 ncRNAs and 1,998 disease phenotypes with supporting evidence in publications. ncRPheno provides search, browse, RESTful Web service APIs and data download applications.
+                    </p>
+                    <br><li style="color:#D27004"><b>Apr 10, 2018, Poster presentation in Biocuration 2018.</b></li>
+                    <p align="justify" class="rightTxt" style="width: 930px">
+                        The ncRPheno platform was poster presented in the 2018 11th International Biocuration Conference, Shanghai, China.
+                    </p>
+                </div>
+
+
+                <div style=" border:1px solid;color:#BEBEBE" ></div>
+
+                <div style="width:900px;">
+
+                    <!--<div style=" width:950px;border:1px solid;color:#BEBEBE" ></div>-->
+                    <h2 class="panel-title" style="color:#D27004">Contact us</h2>
+                    <div style=" width: 950px; border:3px solid;color:#D27004" ></div>
+                    <p align="justify" class="rightTxt" style="width: 930px">
+                        If you have any inquiries, please do not hesitate to contact us via email: <b>liweizhong@mail.sysu.edu.cn or zhangwl25@mail2.sysu.edu.cn</b>
+                    </p>
+                    <!--<div style=" border:1px solid;color:#BEBEBE" ></div>-->
+
+
+                </div>
+
+                <!--<%&#45;&#45;back to top&#45;&#45;%>-->
+                <div id="return-top" class="top_e">
+                    <img src="/static/images/backToTop.png" width="60" id="img" >
+                    <div style="width:80px;margin:auto;">
+                        <p id='font' style="font-size:15px;margin-left:2px;margin-top: 7.5px;display:none;">Back to<br>the top</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <!--bot end -->
+    <br class="spacer" />
+</div>
+<!--botMain end -->
+<!--footer start -->
+<div id="footerMain">
+    <!--footer start -->
+
+    <div id="footer">
+        <p class="department">Bioinformatics Laboratory for Precision Medicine</p>
+        <p class="copyright">Copyright @ SUN YAT-SEN UNIVERSITY 2018</p>
+    </div>
+    <!--footer end -->
+</div>
+<!--footer end -->
+</div>
+</body>
+<!--<%&#45;&#45;back to the top&#45;&#45;%>-->
+<script type="text/javascript">
+    $(window).scroll(function(){
+        if($(window).scrollTop()>300){
+            $('#return-top').fadeIn(300);
+        }
+        else{$('#return-top').fadeOut(200);}
+    })
+
+
+    // 点击按钮，使得页面返回顶部
+    $("#return-top").click(function(){
+        scrollTo(0,0);
+    });
+    // 鼠标悬浮按钮之上，图片消失，文字显示
+    $(".top_e").mouseover(function(){
+        $("#img").hide();
+        $("#font").show();
+    })
+    //鼠标离开，文字消失，图片显示。
+    $(".top_e").mouseout(function(){
+        $("#font").hide();
+        $("#img").show();
+    })
+</script>
+
+</html>
+
+
