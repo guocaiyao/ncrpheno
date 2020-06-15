@@ -20,7 +20,7 @@
     <jackson.version>2.9.4</jackson.version>
     <hibernate.version>5.2.12.Final</hibernate.version>
     <mybatis.version>3.4.5</mybatis.version>
-    <spring.version>5.0.2.RELEASE</spring.version>
+    <spring.version>5.2.7.RELEASE</spring.version>
   </properties>
 
   <dependencies>
